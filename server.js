@@ -13,7 +13,8 @@ dotenv.config();
 //express app
 const app = express();
 const URI = process.env.MONGODBURL;
-const PORT = process.env.PORT || 5000;
+const PORT =  process.env.PORT || 5000;
+
 
 app.use(express.json());
 app.use(cors());

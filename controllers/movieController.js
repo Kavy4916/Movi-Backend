@@ -3,7 +3,7 @@ import Movie from "../models/movieModel.js";
 
 //get all movies
  const getAllMovie = async(req, res)=>{
-        const allMovie = await Movie.find({}).sort({createdAt: -1});
+        const allMovie = await Movie.find({verified: true}).sort({createdAt: -1});
         if(allMovie){
             res.status(200).json({error: false, allMovie});
         }
