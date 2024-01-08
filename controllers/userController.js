@@ -17,9 +17,9 @@ const loginUser = async (req, res) => {
   try {
     const user = await User.login(email, password);
 
+
     //create Token
     const token = createToken(user._id);
-
     res.status(200).json({ error: false, email, token });
   } catch (error) {
     res.status(400).json({ error: true, errorMessage: error.message });
@@ -93,4 +93,6 @@ const getWatchList = async(req, res) => {
   res.status(200).json({error: false, allMovie: allMovie, empty});
 }
 
+
 export { loginUser, signupUser, addMovieToWL, getWatchList };
+
