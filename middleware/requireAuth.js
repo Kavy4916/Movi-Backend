@@ -14,7 +14,7 @@ const requireAuth = async (req, res, next) => {
 
     try{
         //grabing id
-        const {_id} = jwt.verify(token, "22103086kavyjaiswalcomputerscience");
+        const {_id} = jwt.verify(token, process.env.SECRET);
         //finding user
         req.user = await User.findOne({_id});
         //forwarding to the routes
